@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AppHeader } from '@components';
+import { NavigationBar } from '@components';
 import { ConstructorPage } from '../../pages/constructor-page';
 import { Feed } from '../../pages/feed';
 import { Login } from '../../pages/login';
@@ -8,10 +8,10 @@ import { Register } from '../../pages/register';
 import { ForgotPassword } from '../../pages/forgot-password';
 import { ResetPassword } from '../../pages//reset-password';
 import { Profile } from '../../pages/profile';
-import { ProfileOrders } from '../../pages/profile-orders';
+import { OrderHistoryPage } from '../../pages/profile-orders';
 import { NotFound404 } from '../../pages/not-fount-404';
 import { OrderInfo } from '../../components/order-info';
-import { IngredientDetails } from '../../components/ingredient-details';
+import { IngredientInfoPanel } from '../../components/ingredient-details';
 import { Modal } from '../../components/modal';
 import { RootState, useDispatch, useSelector } from '../../services/store';
 import { fetchIngredients } from '../../services/slices/ingredients-slice';
@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <AppHeader />
+      <NavigationBar />
       <Routes>
         <Route path='/' element={<ConstructorPage />} />
         <Route path='/feed' element={<Feed />} />
@@ -50,7 +50,7 @@ const App = () => {
               title='Детали ингредиента'
               onClose={() => window.history.back()}
             >
-              <IngredientDetails />
+              <IngredientInfoPanel />
             </Modal>
           }
         />
@@ -98,7 +98,7 @@ const App = () => {
           path='/profile/orders'
           element={
             <ProtectedRoute>
-              <ProfileOrders />
+              <OrderHistoryPage />
             </ProtectedRoute>
           }
         />

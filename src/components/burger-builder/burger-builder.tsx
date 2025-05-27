@@ -16,7 +16,7 @@ export const BurgerBuilder: FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const constructorItems = useSelector((state) => state.constructorBurger);
+  const constructorItems = useSelector((state) => state.builderBurger);
   const orderRequest = useSelector((state) => state.orders.loading);
   const orderModalData = useSelector((state) => state.orders.currentOrder);
   const user = useSelector((state: RootState) => state.user.user);

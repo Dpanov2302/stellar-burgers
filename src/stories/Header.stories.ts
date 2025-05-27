@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AppHeaderUI } from '@ui';
+import { NavigationBarUI } from '@ui';
 
 const meta = {
   title: 'Example/Header',
-  component: AppHeaderUI,
+  component: NavigationBarUI,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen'
   }
-} satisfies Meta<typeof AppHeaderUI>;
+} satisfies Meta<typeof NavigationBarUI>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

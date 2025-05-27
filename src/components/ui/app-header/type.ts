@@ -1,3 +1,3 @@
-export type TAppHeaderUIProps = {
+export type TNavigationBarUIProps = {
   userName: string | undefined;
 };

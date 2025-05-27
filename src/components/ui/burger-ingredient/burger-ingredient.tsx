@@ -8,9 +8,9 @@ import {
   AddButton
 } from '@zlden/react-developer-burger-ui-components';
 
-import { TBurgerIngredientUIProps } from './type';
+import { TIngredientCardUIProps } from './type';
 
-export const BurgerIngredientUI: FC<TBurgerIngredientUIProps> = memo(
+export const IngredientCardUI: FC<TIngredientCardUIProps> = memo(
   ({ ingredient, count, handleAdd, locationState }) => {
     const { image, price, name, _id } = ingredient;
 

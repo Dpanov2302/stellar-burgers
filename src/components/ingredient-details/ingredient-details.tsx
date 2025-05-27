@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector, RootState } from '../../services/store';
 import { fetchIngredients } from '../../services/slices/ingredients-slice';
 import { Preloader } from '../ui/preloader';
-import { IngredientDetailsUI } from '../ui/ingredient-details';
+import { IngredientInfoPanelUI } from '../ui/ingredient-details';
 
-export const IngredientDetails: FC = () => {
+export const IngredientInfoPanel: FC = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
   const { items, loading, error } = useSelector(
@@ -34,5 +34,5 @@ export const IngredientDetails: FC = () => {
     return <p className='text text_type_main-default'>Ингредиент не найден</p>;
   }
 
-  return <IngredientDetailsUI ingredientData={ingredientData} />;
+  return <IngredientInfoPanelUI ingredientData={ingredientData} />;
 };

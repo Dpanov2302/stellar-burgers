@@ -1,12 +1,12 @@
 import { FC, memo } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { BurgerIngredientUI } from '@ui';
-import { TBurgerIngredientProps } from './type';
+import { IngredientCardUI } from '@ui';
+import { TIngredientCardProps } from './type';
 import { useDispatch } from 'react-redux';
 import { addIngredient, setBun } from '../../services/slices/constructor-slice';
 
-export const BurgerIngredient: FC<TBurgerIngredientProps> = memo(
+export const IngredientCard: FC<TIngredientCardProps> = memo(
   ({ ingredient, count }) => {
     const dispatch = useDispatch();
     const location = useLocation();
@@ -20,7 +20,7 @@ export const BurgerIngredient: FC<TBurgerIngredientProps> = memo(
     };
 
     return (
-      <BurgerIngredientUI
+      <IngredientCardUI
         ingredient={ingredient}
         count={count}
         locationState={{ background: location }}

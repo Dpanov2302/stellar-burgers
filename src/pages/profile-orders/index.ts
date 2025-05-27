@@ -1,1 +1,1 @@
-export { ProfileOrders } from './profile-orders';
+export { OrderHistoryPage } from './profile-orders';

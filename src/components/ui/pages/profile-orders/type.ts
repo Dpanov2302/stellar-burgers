@@ -1,5 +1,5 @@
 import { TOrder } from '@utils-types';
 
-export type ProfileOrdersUIProps = {
+export type OrderHistoryPageUIProps = {
   orders: TOrder[];
 };

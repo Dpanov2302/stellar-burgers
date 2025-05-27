@@ -1,1 +1,1 @@
-export { AppHeader } from './app-header';
+export { NavigationBar } from './app-header';

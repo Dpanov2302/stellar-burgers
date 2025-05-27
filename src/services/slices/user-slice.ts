@@ -124,7 +124,7 @@ export const resetPassword = createAsyncThunk<
   }
 });
 
-const userSlice = createSlice({
+const authStore = createSlice({
   name: 'user',
   initialState: initialUserState,
   reducers: {
@@ -221,5 +221,5 @@ const userSlice = createSlice({
   }
 });
 
-export const { clearPasswordReset } = userSlice.actions;
-export const userReducer = userSlice.reducer;
+export const { clearPasswordReset } = authStore.actions;
+export const userReducer = authStore.reducer;

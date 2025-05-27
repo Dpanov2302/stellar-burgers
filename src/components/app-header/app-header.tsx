@@ -1,9 +1,9 @@
 import React, { FC, useEffect } from 'react';
 import { useDispatch, useSelector, RootState } from '../../services/store';
 import { fetchUser } from '../../services/slices/user-slice';
-import { AppHeaderUI } from '@ui';
+import { NavigationBarUI } from '@ui';
 
-export const AppHeader: FC = () => {
+export const NavigationBar: FC = () => {
   const dispatch = useDispatch();
   const { user, loading } = useSelector((state: RootState) => state.user);
 
@@ -19,5 +19,5 @@ export const AppHeader: FC = () => {
 
   const userName = user?.name || '';
 
-  return <AppHeaderUI userName={userName} />;
+  return <NavigationBarUI userName={userName} />;
 };

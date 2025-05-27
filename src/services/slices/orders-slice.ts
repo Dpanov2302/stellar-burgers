@@ -59,7 +59,7 @@ export const fetchOrderByNumber = createAsyncThunk<
   }
 });
 
-const ordersSlice = createSlice({
+const orderFeed = createSlice({
   name: 'orders',
   initialState: initialOrdersState,
   reducers: {
@@ -119,5 +119,5 @@ const ordersSlice = createSlice({
   }
 });
 
-export const { clearCurrentOrder } = ordersSlice.actions;
-export const ordersReducer = ordersSlice.reducer;
+export const { clearCurrentOrder } = orderFeed.actions;
+export const ordersReducer = orderFeed.reducer;

@@ -3,9 +3,9 @@ import { useInView } from 'react-intersection-observer';
 import { useSelector } from '../../services/store';
 
 import { TTabMode } from '@utils-types';
-import { BurgerIngredientsUI } from '../ui/burger-ingredients';
+import { IngredientCardsUI } from '../ui/burger-ingredients';
 
-export const BurgerIngredients: FC = () => {
+export const IngredientCards: FC = () => {
   const ingredients = useSelector((state) => state.ingredients.items);
 
   // Группируем ингредиенты по типу
@@ -51,7 +51,7 @@ export const BurgerIngredients: FC = () => {
   };
 
   return (
-    <BurgerIngredientsUI
+    <IngredientCardsUI
       currentTab={currentTab}
       buns={buns}
       mains={mains}
