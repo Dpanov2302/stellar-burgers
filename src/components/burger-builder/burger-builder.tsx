@@ -5,14 +5,14 @@ import store, {
   useSelector
 } from '../../services/store';
 import { TConstructorIngredient } from '../../utils/types';
-import { BurgerConstructorUI } from '../ui/burger-constructor';
+import { BurgerBuilderUI } from '../ui/burger-builder';
 import {
   createOrder,
   clearCurrentOrder
 } from '../../services/slices/orders-slice';
 import { useNavigate } from 'react-router-dom';
 
-export const BurgerConstructor: FC = () => {
+export const BurgerBuilder: FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -55,7 +55,7 @@ export const BurgerConstructor: FC = () => {
   );
 
   return (
-    <BurgerConstructorUI
+    <BurgerBuilderUI
       price={price}
       orderRequest={orderRequest}
       constructorItems={constructorItems}
