@@ -2,6 +2,7 @@
 
 describe('Конструктор бургера — добавление по клику', () => {
   beforeEach(() => {
+    // @ts-ignore
     cy.intercept('GET', 'https://norma.nomoreparties.space/api/ingredients', {
       fixture: 'ingredients.json'
     }).as('getIngredients');

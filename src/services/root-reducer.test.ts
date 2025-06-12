@@ -24,8 +24,8 @@ describe('rootReducer', () => {
     // Сравниваем кусок стейта user
     expect(globalState.user).toEqual(userReducer(undefined, { type: '' }));
 
-    // Сравниваем кусок стейта constructorBurger
-    expect(globalState.constructorBurger).toEqual(
+    // Сравниваем кусок стейта burgerAssembly
+    expect(globalState.burgerAssembly).toEqual(
       constructorReducer(undefined, { type: '' })
     );
   });
