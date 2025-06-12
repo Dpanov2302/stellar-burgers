@@ -4,13 +4,13 @@ import {
   ConstructorElement,
   CurrencyIcon
 } from '@zlden/react-developer-burger-ui-components';
-import styles from './burger-builder.module.css';
-import { BurgerBuilderUIProps } from './type';
+import styles from './burger-assembly.module.css';
+import { BurgerAssemblyUIProps } from './type';
 import { TConstructorIngredient } from '@utils-types';
-import { BurgerBuilderElement, Modal } from '@components';
+import { AssemblyIngredient, Modal } from '@components';
 import { Preloader, OrderDetailsUI } from '@ui';
 
-export const BurgerBuilderUI: FC<BurgerBuilderUIProps> = ({
+export const BurgerAssemblyUI: FC<BurgerAssemblyUIProps> = ({
   constructorItems,
   orderRequest,
   price,
@@ -18,9 +18,9 @@ export const BurgerBuilderUI: FC<BurgerBuilderUIProps> = ({
   onOrderClick,
   closeOrderModal
 }) => (
-  <section className={styles.burger_constructor}>
+  <section className={styles.burger_assembly} data-testid='burger-assembly'>
     {constructorItems.bun ? (
-      <div className={`${styles.element} mb-4 mr-4`}>
+      <div className={`${styles.element} mb-4 mr-4`} data-testid='assembly-bun'>
         <ConstructorElement
           type='top'
           isLocked
@@ -36,11 +36,11 @@ export const BurgerBuilderUI: FC<BurgerBuilderUIProps> = ({
         Выберите булки
       </div>
     )}
-    <ul className={styles.elements}>
+    <ul className={styles.elements} data-testid='assembly-filling'>
       {constructorItems.ingredients.length > 0 ? (
         constructorItems.ingredients.map(
           (item: TConstructorIngredient, index: number) => (
-            <BurgerBuilderElement
+            <AssemblyIngredient
               ingredient={item}
               index={index}
               totalItems={constructorItems.ingredients.length}
@@ -57,7 +57,7 @@ export const BurgerBuilderUI: FC<BurgerBuilderUIProps> = ({
       )}
     </ul>
     {constructorItems.bun ? (
-      <div className={`${styles.element} mt-4 mr-4`}>
+      <div className={`${styles.element} mt-4 mr-4`} data-testid='assembly-bun'>
         <ConstructorElement
           type='bottom'
           isLocked
