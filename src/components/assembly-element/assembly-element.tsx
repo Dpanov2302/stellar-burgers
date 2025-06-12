@@ -1,13 +1,13 @@
 import { FC, memo } from 'react';
-import { BurgerConstructorElementUI } from '@ui';
-import { BurgerConstructorElementProps } from './type';
+import { AssemblyIngredientUI } from '@ui';
+import { AssemblyIngredientProps } from './type';
 import { useDispatch } from '../../services/store';
 import {
   moveIngredient,
   removeIngredient
 } from '../../services/slices/constructor-slice';
 
-export const BurgerConstructorElement: FC<BurgerConstructorElementProps> = memo(
+export const AssemblyIngredient: FC<AssemblyIngredientProps> = memo(
   ({ ingredient, index, totalItems }) => {
     const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ export const BurgerConstructorElement: FC<BurgerConstructorElementProps> = memo(
     };
 
     return (
-      <BurgerConstructorElementUI
+      <AssemblyIngredientUI
         ingredient={ingredient}
         index={index}
         totalItems={totalItems}
