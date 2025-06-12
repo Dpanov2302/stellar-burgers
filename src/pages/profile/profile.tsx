@@ -1,4 +1,3 @@
-// src/pages/profile/profile.tsx
 import React, {
   FC,
   useState,
@@ -29,14 +28,12 @@ export const Profile: FC = () => {
   });
   const [errorText, setErrorText] = useState<string>('');
 
-  // Initialize form when user changes
   useEffect(() => {
     if (user) {
       setFormValue({ name: user.name, email: user.email, password: '' });
     }
   }, [user]);
 
-  // Sync error
   useEffect(() => {
     if (error) {
       setErrorText(error);
@@ -52,13 +49,11 @@ export const Profile: FC = () => {
     e.preventDefault();
     setErrorText('');
     const { name, email, password } = formValue;
-    // Dispatch update
     dispatch(updateUser({ name, email, password: password || undefined })).then(
       (action) => {
         if ('error' in action) {
           // rejected
         } else {
-          // clear password field
           setFormValue((prev) => ({ ...prev, password: '' }));
         }
       }

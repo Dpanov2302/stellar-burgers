@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './app-header.module.css';
-import { TNavigationBarUIProps } from './type';
+import { TAppHeaderUIProps } from './type';
 import {
   BurgerIcon,
   ListIcon,
@@ -9,7 +9,7 @@ import {
   ProfileIcon
 } from '@zlden/react-developer-burger-ui-components';
 
-export const NavigationBarUI: FC<TNavigationBarUIProps> = ({ userName }) => (
+export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName }) => (
   <header className={styles.header}>
     <nav className={`${styles.menu} p-4`}>
       <div className={styles.menu_part_left}>

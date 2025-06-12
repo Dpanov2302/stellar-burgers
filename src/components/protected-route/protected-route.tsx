@@ -1,4 +1,3 @@
-// src/components/protected-route/protected-route.tsx
 import React, { FC, useEffect } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector, RootState } from '../../services/store';
@@ -8,11 +7,6 @@ type TRouteProps = {
   children: React.ReactNode;
 };
 
-/**
- * Защищённый маршрут: доступен только аутентифицированным пользователям.
- * При первичной загрузке проверяет токен и подтягивает профиль.
- * Неаутентифицированные перенаправляются на /login.
- */
 export const ProtectedRoute: FC<TRouteProps> = ({ children }) => {
   const dispatch = useDispatch();
   const location = useLocation();
@@ -37,11 +31,6 @@ export const ProtectedRoute: FC<TRouteProps> = ({ children }) => {
   return <>{children}</>;
 };
 
-/**
- * Публичный маршрут: доступен только неаутентифицированным пользователям.
- * При первичной загрузке проверяет токен и подтягивает профиль.
- * Аутентифицированные перенаправляются на главную страницу.
- */
 export const PublicRoute: FC<TRouteProps> = ({ children }) => {
   const dispatch = useDispatch();
   const { user, loading } = useSelector((state: RootState) => state.user);

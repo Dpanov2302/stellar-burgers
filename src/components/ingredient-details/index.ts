@@ -1,1 +1,1 @@
-export { IngredientInfoPanel } from './ingredient-details';
+export { IngredientDetails } from './ingredient-details';

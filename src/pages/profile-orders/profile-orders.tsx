@@ -1,4 +1,4 @@
-import { OrderHistoryPageUI } from '@ui-pages';
+import { ProfileOrdersUI } from '@ui-pages';
 import { TOrder } from '@utils-types';
 import { FC, useEffect } from 'react';
 import { Preloader } from '../../components/ui/preloader/preloader';
@@ -21,7 +21,7 @@ const orders = [
     number: 77067
   }
 ];
-export const OrderHistoryPage: FC = () => {
+export const ProfileOrders: FC = () => {
   const dispatch = useDispatch();
   const { orders, loading, error } = useSelector(
     (state: RootState) => state.orders
@@ -43,5 +43,5 @@ export const OrderHistoryPage: FC = () => {
     );
   }
 
-  return <OrderHistoryPageUI orders={orders} />;
+  return <ProfileOrdersUI orders={orders} />;
 };

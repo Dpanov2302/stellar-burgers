@@ -66,7 +66,6 @@ export const logoutUser = createAsyncThunk<void, void, { rejectValue: string }>(
   async (_, { rejectWithValue }) => {
     try {
       await logoutApi();
-      // Очистим токены
       localStorage.removeItem('refreshToken');
       document.cookie = 'accessToken=; path=/; max-age=0';
     } catch (err: any) {
@@ -124,7 +123,7 @@ export const resetPassword = createAsyncThunk<
   }
 });
 
-const authStore = createSlice({
+const userSlice = createSlice({
   name: 'user',
   initialState: initialUserState,
   reducers: {
@@ -221,5 +220,5 @@ const authStore = createSlice({
   }
 });
 
-export const { clearPasswordReset } = authStore.actions;
-export const userReducer = authStore.reducer;
+export const { clearPasswordReset } = userSlice.actions;
+export const userReducer = userSlice.reducer;

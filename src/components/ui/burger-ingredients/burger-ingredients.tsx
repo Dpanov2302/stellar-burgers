@@ -2,10 +2,10 @@ import React, { FC, memo } from 'react';
 import { Tab } from '@zlden/react-developer-burger-ui-components';
 
 import styles from './burger-ingredients.module.css';
-import { IngredientCardsUIProps } from './type';
+import { BurgerIngredientsUIProps } from './type';
 import { IngredientsCategory } from '@components';
 
-export const IngredientCardsUI: FC<IngredientCardsUIProps> = memo(
+export const BurgerIngredientsUI: FC<BurgerIngredientsUIProps> = memo(
   ({
     currentTab,
     buns,

@@ -27,7 +27,7 @@ export const fetchIngredients = createAsyncThunk<
   }
 });
 
-const ingredientStore = createSlice({
+const ingredientsSlice = createSlice({
   name: 'ingredients',
   initialState: initialIngredientsState,
   reducers: {},
@@ -51,4 +51,4 @@ const ingredientStore = createSlice({
   }
 });
 
-export const ingredientsReducer = ingredientStore.reducer;
+export const ingredientsReducer = ingredientsSlice.reducer;

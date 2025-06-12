@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector, RootState } from '../../services/store';
 import { fetchIngredients } from '../../services/slices/ingredients-slice';
 import { Preloader } from '../ui/preloader';
-import { IngredientInfoPanelUI } from '../ui/ingredient-details';
+import { IngredientDetailsUI } from '../ui/ingredient-details';
 
-export const IngredientInfoPanel: FC = () => {
+export const IngredientDetails: FC = () => {
   const { id } = useParams<{ id: string }>();
   const dispatch = useDispatch();
   const { items, loading, error } = useSelector(
@@ -13,13 +13,11 @@ export const IngredientInfoPanel: FC = () => {
   );
 
   useEffect(() => {
-    // Если ингредиенты не загружены, запросить их
     if (!items.length) {
       dispatch(fetchIngredients());
     }
   }, [dispatch, items.length]);
 
-  // Пока идёт загрузка или нет данных — показать прелоадер
   if (loading || !items.length) {
     return <Preloader />;
   }
@@ -34,5 +32,5 @@ export const IngredientInfoPanel: FC = () => {
     return <p className='text text_type_main-default'>Ингредиент не найден</p>;
   }
 
-  return <IngredientInfoPanelUI ingredientData={ingredientData} />;
+  return <IngredientDetailsUI ingredientData={ingredientData} />;
 };

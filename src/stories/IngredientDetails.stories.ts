@@ -1,21 +1,21 @@
-import { IngredientInfoPanelUI } from '@ui';
+import { IngredientDetailsUI } from '@ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Example/IngredientInfoPanel',
-  component: IngredientInfoPanelUI,
+  title: 'Example/IngredientDetails',
+  component: IngredientDetailsUI,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen'
   }
-} satisfies Meta<typeof IngredientInfoPanelUI>;
+} satisfies Meta<typeof IngredientDetailsUI>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const DefaultIngredientInfoPanel: Story = {
+export const DefaultIngredientDetails: Story = {
   args: {
     ingredientData: {
       _id: '111',

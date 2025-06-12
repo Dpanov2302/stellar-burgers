@@ -1,13 +1,12 @@
 import React, { FC, useEffect } from 'react';
 import { useDispatch, useSelector, RootState } from '../../services/store';
 import { fetchUser } from '../../services/slices/user-slice';
-import { NavigationBarUI } from '@ui';
+import { AppHeaderUI } from '@ui';
 
-export const NavigationBar: FC = () => {
+export const AppHeader: FC = () => {
   const dispatch = useDispatch();
   const { user, loading } = useSelector((state: RootState) => state.user);
 
-  // При монтировании проверяем наличие токена и подтягиваем профиль
   useEffect(() => {
     const hasToken = document.cookie
       .split('; ')
@@ -19,5 +18,5 @@ export const NavigationBar: FC = () => {
 
   const userName = user?.name || '';
 
-  return <NavigationBarUI userName={userName} />;
+  return <AppHeaderUI userName={userName} />;
 };

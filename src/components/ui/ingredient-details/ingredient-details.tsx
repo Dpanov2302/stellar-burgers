@@ -1,8 +1,8 @@
 import React, { FC, memo } from 'react';
 import styles from './ingredient-details.module.css';
-import { IngredientInfoPanelUIProps } from './type';
+import { IngredientDetailsUIProps } from './type';
 
-export const IngredientInfoPanelUI: FC<IngredientInfoPanelUIProps> = memo(
+export const IngredientDetailsUI: FC<IngredientDetailsUIProps> = memo(
   ({ ingredientData }) => {
     const { name, image_large, calories, proteins, fat, carbohydrates } =
       ingredientData;
