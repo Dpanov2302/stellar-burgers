@@ -1,14 +1,13 @@
-import { ordersReducer, clearCurrentOrder } from './orders-slice';
+import {
+  ordersReducer,
+  clearCurrentOrder,
+  ordersInitialState
+} from './orders-slice';
 import { fetchOrders, createOrder, fetchOrderByNumber } from './orders-slice';
 import type { TOrder } from '../../utils/types';
 
 describe('ordersSlice reducer', () => {
-  const initialState = {
-    orders: [] as TOrder[],
-    currentOrder: null as TOrder | null,
-    loading: false,
-    error: null as string | null
-  };
+  const initialState = ordersInitialState;
 
   it('возвращает initial state при неизвестном экшене', () => {
     const next = ordersReducer(undefined, { type: 'unknown' });

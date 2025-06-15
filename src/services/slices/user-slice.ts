@@ -222,3 +222,4 @@ const userSlice = createSlice({
 
 export const { clearPasswordReset } = userSlice.actions;
 export const userReducer = userSlice.reducer;
+export const userInitialState = initialUserState;

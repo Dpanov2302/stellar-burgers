@@ -1,4 +1,7 @@
-import { constructorReducer } from './constructor-slice';
+import {
+  constructorReducer,
+  initialConstructorState
+} from './constructor-slice';
 import {
   addIngredient,
   removeIngredient,
@@ -37,7 +40,7 @@ describe('constructorSlice reducer', () => {
   };
 
   it('добавляет ингредиент в массив ingredients при dispatch addIngredient', () => {
-    const initialState = { bun: null, ingredients: [] };
+    const initialState = initialConstructorState;
     const action = { type: addIngredient.type, payload: ing1 };
     const next = constructorReducer(initialState, action);
     expect(next.ingredients).toHaveLength(1);

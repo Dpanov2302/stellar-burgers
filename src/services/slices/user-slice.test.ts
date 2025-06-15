@@ -7,17 +7,13 @@ import {
   fetchUser,
   updateUser,
   requestPasswordReset,
-  resetPassword
+  resetPassword,
+  userInitialState
 } from './user-slice';
 import type { TUser } from '../../utils/types';
 
 describe('userSlice reducer', () => {
-  const initialState = {
-    user: null as TUser | null,
-    loading: false,
-    error: null as string | null,
-    passwordResetRequested: false
-  };
+  const initialState = userInitialState;
 
   it('возвращает initial state при неизвестном экшене', () => {
     expect(userReducer(undefined, { type: 'unknown' })).toEqual(initialState);

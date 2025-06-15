@@ -1,13 +1,12 @@
-// src/services/slices/ingredients-slice.test.ts
-import { ingredientsReducer, fetchIngredients } from './ingredients-slice';
+import {
+  ingredientsReducer,
+  fetchIngredients,
+  ingredientsInitialState
+} from './ingredients-slice';
 import type { TIngredient } from '../../utils/types';
 
 describe('ingredientsSlice reducer', () => {
-  const initialState = {
-    items: [] as TIngredient[],
-    loading: false,
-    error: null as string | null
-  };
+  const initialState = ingredientsInitialState;
 
   it('возвращает initial state при неизвестном экшене', () => {
     const next = ingredientsReducer(undefined, { type: 'unknown' });

@@ -1,47 +1,30 @@
 /// <reference types="cypress" />
 
+import { selectors } from './selectors';
+
 describe('Конструктор бургера — добавление по клику', () => {
   beforeEach(() => {
     // @ts-ignore
-    cy.intercept('GET', 'https://norma.nomoreparties.space/api/ingredients', {
+    cy.intercept('GET', '/api/ingredients', {
       fixture: 'ingredients.json'
     }).as('getIngredients');
     cy.visit('/');
-
     cy.wait('@getIngredients');
   });
 
   it('добавляет булку и начинку через клик на кнопку', () => {
-    cy.get('[data-testid="ingredient-643d69a5c3f7b9001cfa093c"]')
-      .find('button')
-      .click();
+    cy.get(selectors.bunButton).click();
+    cy.get(selectors.assemblyBun).should('contain', 'Краторная булка N-200i');
 
-    cy.get('[data-testid="assembly-bun"]').should(
-      'contain',
-      'Краторная булка N-200i'
-    );
-
-    cy.get('[data-testid="ingredient-643d69a5c3f7b9001cfa0940"]')
-      .find('button')
-      .click();
-
-    cy.get('[data-testid="assembly-filling"]')
-      .find('li')
-      .and('contain', 'Говяжий метеорит (отбивная)');
+    cy.get(selectors.meatButton).click();
+    cy.get(selectors.assemblyFilling).and('contain', 'Говяжий метеорит (отбивная)');
   });
 
   it('добавляет булку и сразу несколько начинок', () => {
-    cy.get(
-      '[data-testid="ingredient-643d69a5c3f7b9001cfa093c"] button'
-    ).click();
+    cy.get(selectors.bunButton).click();
+    cy.get(selectors.meatButton).click();
+    cy.get(selectors.meatButton).click();
 
-    cy.get(
-      '[data-testid="ingredient-643d69a5c3f7b9001cfa0940"] button'
-    ).click();
-    cy.get(
-      '[data-testid="ingredient-643d69a5c3f7b9001cfa0940"] button'
-    ).click();
-
-    cy.get('[data-testid="assembly-filling"] li').should('have.length', 2);
+    cy.get(selectors.assemblyFilling).should('have.length', 2);
   });
 });

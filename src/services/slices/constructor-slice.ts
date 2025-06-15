@@ -66,3 +66,4 @@ export const {
 } = constructorSlice.actions;
 
 export const constructorReducer = constructorSlice.reducer;
+export const initialConstructorState = initialState;

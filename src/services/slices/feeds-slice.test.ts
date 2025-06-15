@@ -1,14 +1,8 @@
-import { feedReducer, fetchFeed } from './feeds-slice';
+import { feedReducer, fetchFeed, feedInitialState } from './feeds-slice';
 import type { TOrder } from '../../utils/types';
 
 describe('feedSlice reducer', () => {
-  const initialState = {
-    orders: [] as TOrder[],
-    total: 0,
-    totalToday: 0,
-    loading: false,
-    error: null as string | null
-  };
+  const initialState = feedInitialState;
 
   it('должен возвращать initial state при неизвестном экшене', () => {
     const next = feedReducer(undefined, { type: 'unknown' });
